@@ -1,6 +1,6 @@
 
 	<head>
-		<title>categorias</title>
+		<title>Categorias</title>
 	</head>
 
 		<div class="container">
@@ -75,6 +75,7 @@
 					$('#tablaCategoriaLoad').load("vistas/categorias/tablaCategorias.php");
 					alertify.success("Categoria agregada con exito :D");
 				}else{
+					alert("pero que a pasao?: " + r);
 					alertify.error("No se pudo agregar categoria");
 				}
 			}
