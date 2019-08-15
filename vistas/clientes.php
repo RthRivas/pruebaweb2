@@ -161,7 +161,6 @@
 					data:datos,
 					url:"procesos/clientes/actualizaCliente.php",
 					success:function(r){
-						alert(datos);
 						if(r==1){
 							$('#tablaClientesLoad').load("vistas/clientes/tablaClientes.php");
 							alertify.success("Cliente actualizado con exito :D");
