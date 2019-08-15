@@ -2,12 +2,12 @@
 
 
 	require_once "../../clases/Conexion.php";
-	require_once "../../clases/Usuarios.php";
+	require_once "../../clases/Clientes.php";
 
-	$obj= new usuarios;
+	$obj= new clientes();
 
 	$datos=array(
-			$_POST['idCliente'],
+			$_POST['idclienteU'],
 			$_POST['nombreU'],
 			$_POST['apellidosU'],
 			$_POST['direccionU'],
