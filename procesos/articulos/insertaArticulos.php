@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	$iduser=$_SESSION['iduser'];
+	$iduser=$_SESSION['userID'];
 	require_once "../../clases/Conexion.php";
 	require_once "../../clases/Articulos.php";
 

@@ -27,9 +27,9 @@
 						<label>Descripcion</label>
 						<input type="text" class="form-control input-sm" id="descripcion" name="descripcion">
 						<label>Cantidad</label>
-						<input type="text" class="form-control input-sm" id="cantidad" name="cantidad">
+						<input type="number" value="1" class="form-control input-sm" id="cantidad" name="cantidad">
 						<label>Precio</label>
-						<input type="text" class="form-control input-sm" id="precio" name="precio">
+						<input type="number" min="0.00" step="0.01" value="0.00" class="form-control input-sm" id="precio" name="precio">
 						<label>Imagen</label>
 						<input type="file" id="imagen" name="imagen">
 						<p></p>
@@ -72,9 +72,9 @@
 							<label>Descripcion</label>
 							<input type="text" class="form-control input-sm" id="descripcionU" name="descripcionU">
 							<label>Cantidad</label>
-							<input type="text" class="form-control input-sm" id="cantidadU" name="cantidadU">
+							<input type="number"  class="form-control" value="1" id="cantidadU" name="cantidadU">
 							<label>Precio</label>
-							<input type="text" class="form-control input-sm" id="precioU" name="precioU">
+							<input type="number" class="form-control" value="0.00" id="precioU" name="precioU" min="0.00" step="0.01">
 							
 						</form>
 					</div>
@@ -144,7 +144,8 @@
 							$('#tablaArticulosLoad').load("vistas/articulos/tablaArticulos.php");
 							alertify.success("Actualizado con exito :D");
 						}else{
-							alertify.error("Error al actualizar :(");
+							alert("Erroorazo: "+ r);
+							alertify.error("Error al actualizar :( ");
 						}
 					}
 				});
@@ -169,7 +170,7 @@
 
 				$.ajax({
 					url: "procesos/articulos/insertaArticulos.php",
-					type: "post",
+					type: "POST",
 					dataType: "html",
 					data: formData,
 					cache: false,
@@ -183,7 +184,7 @@
 							$('#tablaArticulosLoad').load("vistas/articulos/tablaArticulos.php");
 							alertify.success("Agregado con exito :D");
 						}else{
-							alertify.error("Fallo al subir el archivo :(");
+							alertify.error("Fallo al subir el archivo :(" + r);
 						}
 					}
 				});

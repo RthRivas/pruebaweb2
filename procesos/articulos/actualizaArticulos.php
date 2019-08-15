@@ -1,7 +1,7 @@
 <?php 
 
-require_once "clases/Conexion.php";
-require_once "clases/Articulos.php";
+require_once "../../clases/Conexion.php";
+require_once "../../clases/Articulos.php";
 
 $obj= new articulos();
 
