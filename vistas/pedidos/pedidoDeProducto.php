@@ -6,14 +6,13 @@ $conexion=$c->conexion();
 ?>
 
 
-<h4>Vender un producto</h4>
+<h4>Pedir un producto</h4>
 <div class="row">
 	<div class="col-sm-4">
-		<form id="frmVentasProductos">
-			<label>Seleciona Cliente</label>
-			<select class="form-control input-sm" id="clienteVenta" name="clienteVenta">
+		<form id="frmPedidoProductos">
+			<label>Selecionar Cliente</label>
+			<select class="form-control input-sm" id="clientePedido" name="clientePedido">
 				<option value="A">Selecciona</option>
-				<option value="0">Sin cliente</option>
 				<?php
 				$sql="SELECT id_cliente,nombre,apellido 
 				from clientes";
@@ -130,12 +129,11 @@ $conexion=$c->conexion();
 				if(r > 0){
 					$('#tablaVentasTempLoad').load("vistas/ventas/tablaVentasTemp.php");
 					$('#frmVentasProductos')[0].reset();
-					alertify.alert("Venta creada con exito, consulte la informacion de esta en ventas hechas ");
+					alertify.alert("Venta creada con exito, consulte la informacion de esta en ventas hechas :D");
 				}else if(r==0){
 					alertify.alert("No hay lista de venta!!");
 				}else{
 					alertify.error("No se pudo crear la venta");
-
 				}
 			}
 		});

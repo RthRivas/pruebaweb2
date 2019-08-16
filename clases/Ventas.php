@@ -39,7 +39,7 @@ class ventas{
 		$fecha=date('Y-m-d');
 		$idventa=self::creaFolio();
 		$datos=$_SESSION['tablaComprasTemp'];
-		$idusuario=$_SESSION['iduser'];
+		$idusuario=$_SESSION['userID'];
 		$r=0;
 
 		for ($i=0; $i < count($datos) ; $i++) { 
