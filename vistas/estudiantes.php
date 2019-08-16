@@ -30,8 +30,9 @@
                       
                       <div class="col-xs-12 col-sm-6 col-md-3">
                               <div class="thumbnail">
-                                  <a href=""><img  src=" <?php $imgVer=explode("/", $ver[4]) ;$imgruta=$imgVer[1]."/".$imgVer[2]."/".$imgVer[3];	?>">
-                                  <img width="80" height="80" src="<?php echo $imgruta ?>"></a>
+                                   <a href=""><img  src=" <?php $imgVer=explode("/", $ver[4]) ;
+                                    $imgruta=$imgVer[2]."/".$imgVer[3];?>">
+                                    <img width="80" height="80" src="<?php echo $imgruta ?>"></a>
                                           <div class="caption">
                                               <h3><?php echo $ver[0]; ?></h3> <!--nombre-->
                                               <p><?php echo $ver[1]; ?></p> <!--Descripcion-->
