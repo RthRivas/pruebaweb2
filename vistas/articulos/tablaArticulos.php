@@ -24,14 +24,14 @@ require_once "../../clases/Conexion.php";
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Articulos</label></caption>
 	<tr>
-		<td>Nombre</td>
-		<td>Descripcion</td>
-		<td>Cantidad</td>
-		<td>Precio</td>
-		<td>Imagen</td>
-		<td>Categoria</td>
-		<td>Editar</td>
-		<td>Eliminar</td>
+		<th>Nombre</th>
+		<th>Descripcion</th>
+		<th>Cantidad</th>
+		<th>Precio</th>
+		<th>Imagen</th>
+		<th>Categoria</th>
+		<th>Editar</th>
+		<th>Eliminar</th>
 	</tr>
 
 	<?php while($ver=mysqli_fetch_row($result)): ?>
@@ -44,7 +44,7 @@ require_once "../../clases/Conexion.php";
 		<td>
 			<?php 
 			$imgVer=explode("/", $ver[4]) ; 
-			$imgruta=$imgVer[1]."/".$imgVer[2]."/".$imgVer[3];
+			$imgruta= $imgVer[2]."/".$imgVer[3];
 			?>
 			<img width="80" height="80" src="<?php echo $imgruta ?>">
 		</td>

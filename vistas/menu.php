@@ -28,7 +28,7 @@ if(isset($_SESSION['userID'])){
 
           <!----------------------------- Opciones en Común --------------------------------------->
           <li <?php if(isset($_GET['pg'])){ if($_GET['pg'] == 'inicio'){ echo 'class="active"';}}?>>
-          <a href="index.php?pg=home"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+          <a href="index.php?pg=inicio"><span class="glyphicon glyphicon-home"></span> Inicio</a>
           </li>
 
             

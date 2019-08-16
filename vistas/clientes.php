@@ -15,9 +15,9 @@
 						<label>Direccion</label>
 						<input type="text" class="form-control input-sm" id="direccion" name="direccion">
 						<label>Email</label>
-						<input type="text" class="form-control input-sm" id="email" name="email">
+						<input type="email" class="form-control input-sm" id="email" name="email">
 						<label>Telefono</label>
-						<input type="text" class="form-control input-sm" id="telefono" name="telefono">
+						<input type="number" class="form-control input-sm" id="telefono" name="telefono">
 						<label>DUI </label>
 						<input type="text" class="form-control input-sm" id="rfc" name="rfc">
 						<p></p>
@@ -51,15 +51,15 @@
 							<label>Direccion</label>
 							<input type="text" class="form-control input-sm" id="direccionU" name="direccionU">
 							<label>Email</label>
-							<input type="text" class="form-control input-sm" id="emailU" name="emailU">
+							<input type="email" class="form-control input-sm" id="emailU" name="emailU">
 							<label>Telefono</label>
-							<input type="text" class="form-control input-sm" id="telefonoU" name="telefonoU">
+							<input type="number" class="form-control input-sm" id="telefonoU" name="telefonoU">
 							<label>RFC</label>
 							<input type="text" class="form-control input-sm" id="rfcU" name="rfcU">
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button id="btnAgregarClienteU" type="button" class="btn btn-primary" data-dismiss="modal">Actualizar</button>
+						<button id="btnActualizarClienteU" type="button" class="btn btn-primary" data-dismiss="modal">Actualizar</button>
 
 					</div>
 				</div>
@@ -76,7 +76,7 @@
 				url:"procesos/clientes/obtenDatosCliente.php",
 				success:function(r){
 					dato=jQuery.parseJSON(r);
-					$('#idCliente').val(dato['id_cliente']);
+					$('#idclienteU').val(dato['id_cliente']);
 					$('#nombreU').val(dato['nombre']);
 					$('#apellidosU').val(dato['apellido']);
 					$('#direccionU').val(dato['direccion']);
@@ -165,6 +165,7 @@
 							$('#tablaClientesLoad').load("vistas/clientes/tablaClientes.php");
 							alertify.success("Cliente actualizado con exito :D");
 						}else{
+							alert("Errorazo: " +r);
 							alertify.error("No se pudo actualizar cliente");
 						}
 					}

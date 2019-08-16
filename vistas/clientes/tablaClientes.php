@@ -117,16 +117,16 @@ $conexion=$c->conexion();
 
 <div class="table-responsive">
 	 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-	 	<caption><label>Clientes :)</label></caption>
+	 	<caption><label>Clientes</label></caption>
 	 	<tr>
-	 		<td>Nombre</td>
-	 		<td>Apellido</td>
-	 		<td>Direccion</td>
-	 		<td>Email</td>
-	 		<td>Telefono</td>
-	 		<td>RFC</td>
-	 		<td>Editar</td>
-	 		<td>Eliminar</td>
+	 		<th>Nombre</th>
+	 		<th>Apellido</th>
+	 		<th>Direccion</th>
+	 		<th>Email</th>
+	 		<th>Telefono</th>
+	 		<th>RFC</th>
+	 		<th>Editar</th>
+	 		<th>Eliminar</th>
 	 	</tr>
 
 	 	<?php while($ver=mysqli_fetch_row($result)): ?>

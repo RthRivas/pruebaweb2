@@ -17,7 +17,7 @@
               <input type="password" name="password" id="password" class="form-control input-sm" require>
               <p></p>
               <input type="submit" class="btn btn-primary btn-sm" id="entrarSistema" value="Entrar">
-              <a href="registro.php" class="btn btn-danger btn-sm">Registrar</a>
+              <a href="index.php?pg=registro" class="btn btn-danger btn-sm">Registrar</a>
             </form>
           </div>
         </div>

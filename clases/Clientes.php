@@ -38,7 +38,7 @@
 							email,
 							telefono,
 							rfc 
-				from clientes";
+				FROM clientes WHERE id_cliente=$idcliente";
 			$result=mysqli_query($conexion,$sql);
 			$ver=mysqli_fetch_row($result);
 
@@ -57,13 +57,13 @@
 		public function actualizaCliente($datos){
 			$c= new conectar();
 			$conexion=$c->conexion();
-			$sql="UPDATE clientes set nombre='$datos[1]',
+			$sql="UPDATE clientes SET nombre='$datos[1]',
 										apellido='$datos[2]',
 										direccion='$datos[3]',
 										email='$datos[4]',
 										telefono='$datos[5]',
 										rfc='$datos[6]' 
-								where id_cliente='$datos[0]'";
+								WHERE id_cliente='$datos[0]'";
 			return mysqli_query($conexion,$sql);
 		}
 
