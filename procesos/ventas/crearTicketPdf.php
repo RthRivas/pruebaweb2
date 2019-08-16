@@ -1,42 +1,72 @@
-<?php
-// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
-require_once '../../librerias/dompdf/autoload.inc.php';
-use Dompdf\Dompdf;
+<?php 
+	require_once "../../clases/Conexion.php";
+	require_once "../../clases/Ventas.php";
+	include "../../librerias/fpdf/fpdf.php";
+	$objv= new ventas();
 
-$id=$_GET['idventa'];
-// Introducimos HTML de prueba
-function file_get_contents_curl($url) {
-    $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, $url);
+	$c=new conectar();
+	$conexion= $c->conexion();	
+	$idventa=$_GET['idventa'];
 
-    $data = curl_exec($ch);
-    curl_close($ch);
+ $sql="SELECT ve.id_venta,
+		ve.fechaCompra,
+		ve.id_cliente,
+		art.nombre,
+        art.precio,
+        art.descripcion
+	from ventas  as ve 
+	inner join articulos as art
+	on ve.id_producto=art.id_producto
+	and ve.id_venta='$idventa'";
 
-    return $data;
+$result=mysqli_query($conexion,$sql);
+
+	$ver=mysqli_fetch_row($result);
+
+	$folio=$ver[0];
+	$fecha=$ver[1];
+	$idcliente=$ver[2];
+
+
+ //Cantidad de productos
+ $sql="SELECT ve.id_venta,
+ ve.fechaCompra,
+ ve.id_cliente,
+ art.nombre,
+ art.precio,
+ art.descripcion
+from ventas  as ve 
+inner join articulos as art
+on ve.id_producto=art.id_producto
+and ve.id_venta='$idventa'";
+
+$result=mysqli_query($conexion,$sql);
+$total=0;
+$pdf = new FPDF('P', 'mm', array(100,1000));
+
+$pdf->AddPage();
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(40,10,'LIBRERIA SARILO',0, 1,);
+$pdf->Cell(40,10,'Fecha: '.$fecha ,0, 1);
+$pdf->Cell(40,10,'Folio: '.$folio,0,1);
+$pdf->Cell(40,10,'Cliente: '.$objv->nombreCliente($idcliente),0,1);
+$pdf->Cell(40,10,'',0,1);
+$pdf->Cell(40,10,  'Producto',0,0,'L');
+$pdf->Cell(40,10,  'Precio',0,1,'R');
+
+
+
+while($mostrar=mysqli_fetch_row($result)){
+    $pdf->Cell(40,10,  $mostrar[3],0,0,'L');
+    $pdf->Cell(40,10,  '$'.$mostrar[4],0,1,'R');
+    $total=$total + $mostrar[4];
 }
 
- $html=file_get_contents("http://localhost/ventas/vistas/ventas/ticketVentaPdf.php?idventa=".$id);
+    $total=$total + $mostrar[4];
+    $pdf->Cell(40,10,'',0, 1,);
+    $pdf->Cell(40,10, 'Total:'. '$'.$total );
+$pdf->Output();
 
-
+?>
  
-// Instanciamos un objeto de la clase DOMPDF.
-$pdf = new DOMPDF();
- 
-// Definimos el tamaño y orientación del papel que queremos.
-//$pdf->set_paper("letter", "portrait");
-$pdf->set_paper(array(0,0,104,250));
- 
-// Cargamos el contenido HTML.
-$pdf->load_html(utf8_decode($html));
- 
-// Renderizamos el documento PDF.
-$pdf->render();
- 
-// Enviamos el fichero PDF al navegador.
-$pdf->stream('reporteVenta.pdf');
-
-
-
