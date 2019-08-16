@@ -2,7 +2,6 @@
 	<title>Control de Usuarios</title>
 </head>
 
-Administrador
 <div class="container">
 			<h1>Administrar usuarios</h1>
 			<div class="row">

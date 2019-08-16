@@ -47,7 +47,7 @@ $pdf = new FPDF('P', 'mm', array(100,1000));
 
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,10,'LIBRERIA SARILO',0, 1,);
+$pdf->Cell(40,10,'LIBRERIA SARILO',0, 1);
 $pdf->Cell(40,10,'Fecha: '.$fecha ,0, 1);
 $pdf->Cell(40,10,'Folio: '.$folio,0,1);
 $pdf->Cell(40,10,'Cliente: '.$objv->nombreCliente($idcliente),0,1);
@@ -64,7 +64,7 @@ while($mostrar=mysqli_fetch_row($result)){
 }
 
     $total=$total + $mostrar[4];
-    $pdf->Cell(40,10,'',0, 1,);
+    $pdf->Cell(40,10,'',0, 1);
     $pdf->Cell(40,10, 'Total:'. '$'.$total );
 $pdf->Output();
 

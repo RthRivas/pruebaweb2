@@ -42,7 +42,8 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-6">
                                         <br><br><br>
-                                        <a href=""><img  src=" <?php $imgVer=explode("/", $ver[4]) ;$imgruta=$imgVer[1]."/".$imgVer[2]."/".$imgVer[3];	?>">
+                                         <a href=""><img  src=" <?php $imgVer=explode("/", $ver[4]) ;
+                                    $imgruta=$imgVer[2]."/".$imgVer[3];?>">
                                     <img width="80" height="80" src="<?php echo $imgruta ?>"></a>
                                     </div>
                                     <br><br><br>
