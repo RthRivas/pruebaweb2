@@ -12,7 +12,7 @@
 										direccion,
 										email,
 										telefono,
-										rfc)
+										dui)
 							values (
 									'$datos[0]',
 									'$datos[1]',
@@ -37,7 +37,7 @@
 							direccion,
 							email,
 							telefono,
-							rfc 
+							dui 
 				FROM clientes WHERE id_cliente=$idcliente";
 			$result=mysqli_query($conexion,$sql);
 			$ver=mysqli_fetch_row($result);
@@ -49,7 +49,7 @@
 					'direccion' => $ver[3],
 					'email' => $ver[4],
 					'telefono' => $ver[5],
-					'rfc' => $ver[6]
+					'dui' => $ver[6]
 						);
 			return $datos;
 		}
@@ -62,7 +62,7 @@
 										direccion='$datos[3]',
 										email='$datos[4]',
 										telefono='$datos[5]',
-										rfc='$datos[6]' 
+										dui='$datos[6]' 
 								WHERE id_cliente='$datos[0]'";
 			return mysqli_query($conexion,$sql);
 		}

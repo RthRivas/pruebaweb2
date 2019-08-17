@@ -13,7 +13,7 @@
 			$_POST['direccionU'],
 			$_POST['emailU'],
 			$_POST['telefonoU'],
-			$_POST['rfcU']
+			$_POST['duiU']
 				);
 
 	echo $obj->actualizaCliente($datos);
