@@ -13,11 +13,11 @@
  		</span>
  	</caption>
  	<tr>
- 		<td>Nombre</td>
- 		<td>Descripcion</td>
- 		<td>Precio</td>
- 		<td>Cantidad</td>
- 		<td>Quitar</td>
+ 		<th>Nombre</th>
+ 		<th>Descripcion</th>
+ 		<th>Precio</th>
+ 		<th>Cantidad</th>
+ 		<th>Quitar</th>
  	</tr>
  	<?php 
  	$total=0;//esta variable tendra el total de la compra en dinero

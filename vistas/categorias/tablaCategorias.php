@@ -14,9 +14,9 @@
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Categorias :D</label></caption>
 	<tr>
-		<td>Categoria</td>
-		<td>Editar</td>
-		<td>Eliminar</td>
+		<th>Categoria</th>
+		<th>Editar</th>
+		<th>Eliminar</th>
 	</tr>
 
 	<?php

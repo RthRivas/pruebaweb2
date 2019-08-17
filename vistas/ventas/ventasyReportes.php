@@ -23,12 +23,12 @@
 			<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 				<caption><label>Ventas :)</label></caption>
 				<tr>
-					<td>Folio</td>
-					<td>Fecha</td>
-					<td>Cliente</td>
-					<td>Total de compra</td>
-					<td>Ticket</td>
-					<td>Reporte</td>
+					<th>Folio</th>
+					<th>Fecha</th>
+					<th>Cliente</th>
+					<th>Total de compra</th>
+					<th>Ticket</th>
+					<th>Reporte</th>
 				</tr>
 		<?php while($ver=mysqli_fetch_row($result)): ?>
 				<tr>
