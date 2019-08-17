@@ -19,7 +19,7 @@
 	<script src="js/funciones.js"></script>
 	<script src="js/alertify.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="librerias/select2/css/select2.css">
-<script src="librerias/select2/js/select2.js"></script>
+	<script src="librerias/select2/js/select2.js"></script>
 </head>
 <body>
 

@@ -1,4 +1,9 @@
+<style>
+  #frmLogin p {
+   text-align:center;
 
+  }
+</style>
   <div class="container">
     <div class="w-100 p-4"></div>
     <div class="row">
@@ -7,10 +12,11 @@
         <div class="panel panel-primary">
           <div class="panel panel-heading">Sistema de ventas y almacen</div>
           <div class="panel panel-body">
-            <p>
-              <img src="img/ventas.jpg"  height="190">
-            </p>
+            
             <form id="frmLogin" action="index.php?onLogin=true" method="POST">
+            <p >
+             <img src="img/logo-libro.png"  height="190">
+             </p>
               <label>Usuario</label>
               <input type="text" class="form-control input-sm" name="usuario" id="usuario" require>
               <label>Password</label>

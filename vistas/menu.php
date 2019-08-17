@@ -20,7 +20,7 @@ if(isset($_SESSION['userID'])){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img class="img-responsive logo img-thumbnail" src="../img/ventas.jpg" alt="" width="150px" height="150px"></a>
+         
         </div>
         <div id="navbar" class="collapse navbar-collapse">
 
@@ -39,16 +39,16 @@ if(isset($_SESSION['userID'])){
             <a href="index.php?pg=usuarios"><span class="glyphicon glyphicon-user"></span> Administrar usuarios</a>
           </li>
            <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'categorias'){ echo 'class="active"';}}?>>
-            <a href="index.php?pg=categorias"><span class="glyphicon glyphicon-user"></span> Categorias</a>
+            <a href="index.php?pg=categorias"><span class="glyphicon glyphicon-list-alt"></span> Categorias</a>
           </li>
           <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'articulos'){ echo 'class="active"';}}?>>
-            <a href="index.php?pg=articulos"><span class="glyphicon glyphicon-user"></span> Articulos</a>
+            <a href="index.php?pg=articulos"><span class="glyphicon glyphicon-list-alt"></span> Articulos</a>
           </li>
           <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'clientes'){ echo 'class="active"';}}?>>
             <a href="index.php?pg=clientes"><span class="glyphicon glyphicon-user"></span> Clientes</a>
           </li>
           <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'ventas'){ echo 'class="active"';}}?>>
-            <a href="index.php?pg=ventas"><span class="glyphicon glyphicon-user"></span> Ventas</a>
+            <a href="index.php?pg=ventas"><span class="glyphicon glyphicon-usd"></span> Ventas</a>
           </li>
           <?php endif;  ?>
 
@@ -59,7 +59,7 @@ if(isset($_SESSION['userID'])){
             <a href="index.php?pg=clientes"><span class="glyphicon glyphicon-user"></span> Clientes</a>
           </li>
             <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'ventas'){ echo 'class="active"';}}?>>
-            <a href="index.php?pg=ventas"><span class="glyphicon glyphicon-user"></span> Ventas</a>
+            <a href="index.php?pg=ventas"><span class="glyphicon glyphicon-usd"></span> Ventas</a>
           </li>
             <?php endif; ?>
           

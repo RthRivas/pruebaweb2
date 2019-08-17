@@ -7,8 +7,8 @@
 				<div class="panel panel-primary">
 					<div class="panel panel-heading">Sistema de ventas y almacen</div>
 					<div class="panel panel-body">
-						<p>
-							<img src="img/ventas.jpg"  height="190">
+						<p center	>
+							<img src="img/logo-libros.png"  height="250">
 						</p>
 						<form id="frmLogin" action="index.php?onLogin=true" method="POST">
 							<label>Usuario</label>

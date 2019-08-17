@@ -1,5 +1,4 @@
-
-	<head>
+<head>
 		<title>clientes</title>
 	</head>
 	
@@ -173,8 +172,4 @@
 			});
 		});
 	</script>
-
-
-
-
 
