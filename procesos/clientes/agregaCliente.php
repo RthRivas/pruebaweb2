@@ -15,7 +15,7 @@ session_start();
 			$_POST['direccion'],
 			$_POST['email'],
 			$_POST['telefono'],
-			$_POST['rfc']
+			$_POST['dui']
 				);
 
 	echo $obj->agregaCliente($datos);

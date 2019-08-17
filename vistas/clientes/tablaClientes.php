@@ -8,7 +8,7 @@ $conexion=$c->conexion();
 				direccion,
 				email,
 				telefono,
-				rfc 
+				dui 
 		from clientes";
 	$result=mysqli_query($conexion,$sql);
  ?>
@@ -22,7 +22,7 @@ $conexion=$c->conexion();
 	 		<th>Direccion</th>
 	 		<th>Email</th>
 	 		<th>Telefono</th>
-	 		<th>RFC</th>
+	 		<th>DUI</th>
 	 		<th>Editar</th>
 	 		<th>Eliminar</th>
 	 	</tr>
