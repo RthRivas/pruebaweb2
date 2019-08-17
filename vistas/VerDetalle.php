@@ -21,8 +21,9 @@
 	$result=mysqli_query($conexion,$sql);
 
  ?>
-     <?php include 'link.php'; ?>
-    <body id="container-page-product">
+ <head><title>Detalles de Producto</title></head>
+     <?php //include 'link.php'; ?>
+     
         <section id="infoproduct">
             
                 <div class="container">
@@ -55,4 +56,3 @@
                     </div>
                 </div>
             </section>
-    </body>
