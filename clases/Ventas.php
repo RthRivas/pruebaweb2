@@ -20,7 +20,7 @@ class ventas{
 
 		$d=explode('/', $ver[3]);
 
-		$img=$d[1].'/'.$d[2].'/'.$d[3];
+		$img=$d[2].'/'.$d[3];
 
 		$data=array(
 			'nombre' => $ver[0],

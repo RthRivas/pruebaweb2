@@ -1,6 +1,9 @@
+
 <?php 
 
 require_once "../../clases/Conexion.php";
+//require_once "../../librerias/select2/js/select2.js";
+
 $c= new conectar();
 $conexion=$c->conexion();
 ?>
