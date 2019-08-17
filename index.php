@@ -23,7 +23,7 @@
 </head>
 <body>
 
-	<?php if($navController->loadNavBar()){ include $navController->loadNavBar();} ?>
+	<?php if(isset($_SESSION['usuario'])){ include $navController->loadNavBar(); } ?>
 	<br><br><br>
 
 	<?php include $navController->loadView(); ?>
