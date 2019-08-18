@@ -16,20 +16,13 @@
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Usuarios :)</label></caption>
 	<tr>
-<<<<<<< HEAD
-		<td>Nombre</td>
-		<td>Apellido</td>
-		<td>Usuario</td>
-		<td>Correo</td>
-		<td>Editar</td>
-		<td>Eliminar</td>
-=======
+
 		<th>Nombre</th>
 		<th>Apellido</th>
-		<th>Usuario</th>
+		<th>Correo</th>
 		<th>Editar</th>
 		<th>Eliminar</th>
->>>>>>> 246cd295e5b86513f924ba7c094060b95f1a2198
+
 	</tr>
 
 	<?php while($ver=mysqli_fetch_row($result)): ?>
@@ -38,7 +31,7 @@
 		<td><?php echo $ver[1]; ?></td>
 		<td><?php echo $ver[2]; ?></td>
 		<td><?php echo $ver[3]; ?></td>
-		<td><?php echo $ver[4]; ?></td>
+		
 		<td>
 			<span data-toggle="modal" data-target="#actualizaUsuarioModal" class="btn btn-warning btn-xs" onclick="agregaDatosUsuario('<?php echo $ver[0]; ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
