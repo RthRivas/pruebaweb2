@@ -11,12 +11,14 @@
 								apellido,
 								email,
 								password,
-								fechaCaptura)
+								fechaCaptura,
+								tipo)
 						values ('$datos[0]',
 								'$datos[1]',
 								'$datos[2]',
 								'$datos[3]',
-								'$fecha')";
+								'$fecha',
+								'$datos[4]')";
 			return mysqli_query($conexion,$sql);
 		}
 

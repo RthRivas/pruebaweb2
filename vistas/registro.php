@@ -32,7 +32,8 @@
 							<label>Usuario</label>
 							<input type="text" class="form-control input-sm" name="usuario" id="usuario">
 							<label>Password</label>
-							<input type="text" class="form-control input-sm" name="password" id="password">
+							<input type="password" class="form-control input-sm" name="password" id="password">
+							<input type="hidden" class="form-control input-sm" name="tipo" id="tipo" value="3">
 							<p></p>
 							<span class="btn btn-primary" id="registro">Registrar</span>
 							<a href="index.php" class="btn btn-default">Regresar login</a>
@@ -67,6 +68,7 @@
 
 					if(r==1){
 						alert("Agregado con exito");
+						window.location="index.php";
 					}else{
 						alert("Fallo al agregar :(");
 					}

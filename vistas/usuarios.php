@@ -11,15 +11,14 @@
 						<input type="text" class="form-control input-sm" name="nombre" id="nombre">
 						<label>Apellido</label>
 						<input type="text" class="form-control input-sm" name="apellido" id="apellido">
-						<label>Usuario</label>
-						<input type="text" class="form-control input-sm" name="usuario" id="usuario">
-						<label>Password</label>
-						<input type="text" class="form-control input-sm" name="password" id="password">
 						<label>Email</label>
-						<input type="email" class="form-control input-sm" name="email" id="email">
+						<input type="text" class="form-control input-sm" name="usuario" id="usuario">
+						<label>Pass</label>
+						<input type="password" class="form-control input-sm" name="password" id="password">
+						<label>Tipo</label>
+						<input type="number" class="form-control input-sm" name="tipo" id="tipo">
 						<p></p>
 						<span class="btn btn-primary" id="registro">Registrar</span>
-
 					</form>
 				</div>
 				<div class="col-sm-7">
@@ -45,8 +44,7 @@
 							<input type="text" class="form-control input-sm" name="apellidoU" id="apellidoU">
 							<label>Usuario</label>
 							<input type="text" class="form-control input-sm" name="usuarioU" id="usuarioU">
-							<label>Email</label>
-							<input type="text" class="form-control input-sm" name="emailU" id="emailU">
+							
 
 						</form>
 					</div>
@@ -74,7 +72,7 @@
 					$('#nombreU').val(dato['nombre']);
 					$('#apellidoU').val(dato['apellido']);
 					$('#usuarioU').val(dato['usuario']);
-					$('#emailU').val(dato['email']);
+						
 				}
 			});
 		}
@@ -90,7 +88,7 @@
 							$('#tablaUsuariosLoad').load('vistas/usuarios/tablaUsuarios.php');
 							alertify.success("Eliminado con exito!!");
 						}else{
-							alertify.error("No se pudo eliminar :(");
+							alertify.error("No se pudo eliminar ");
 						}
 					}
 				});
@@ -114,9 +112,9 @@
 
 						if(r==1){
 							$('#tablaUsuariosLoad').load('vistas/usuarios/tablaUsuarios.php');
-							alertify.success("Actualizado con exito :D");
+							alertify.success("Actualizado con exito ");
 						}else{
-							alertify.error("No se pudo actualizar :(");
+							alertify.error("No se pudo actualizar ");
 						}
 					}
 				});
