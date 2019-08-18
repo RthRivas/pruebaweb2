@@ -29,6 +29,9 @@ if(isset($_SESSION['userID'])){
           <li <?php if(isset($_GET['pg'])){ if($_GET['pg'] == 'inicio'){ echo 'class="active"';}}?>>
           <a href="index.php?pg=inicio"><span class="glyphicon glyphicon-home"></span> Inicio</a>
           </li>
+           <li <?php if(isset($_GET['pg'])){ if($_GET['pg'] == 'pedidos'){ echo 'class="active"';}}?>>
+          <a href="index.php?pg=pedidos"><span class="glyphicon glyphicon-list-alt"></span> Pedidos</a>
+          </li>
 
             
 
@@ -49,9 +52,7 @@ if(isset($_SESSION['userID'])){
           <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'ventas'){ echo 'class="active"';}}?>>
             <a href="index.php?pg=ventas"><span class="glyphicon glyphicon-usd"></span> Ventas</a>
           </li>
-           <li <?php if(isset($_GET['pg'])){ if($_GET['pg'] == 'pedidos'){ echo 'class="active"';}}?>>
-          <a href="index.php?pg=pedidos"><span class="glyphicon glyphicon-home"></span>Pedidos</a>
-          </li>
+         
           <?php endif;  ?>
 
 
