@@ -5,7 +5,6 @@
 if(isset($_SESSION['userID'])){
   $USRController = new usuarios();
   $usrData = $USRController->obtenDatosUsuario($_SESSION['userID']);
-}
   
 ?>    
 
@@ -30,6 +29,9 @@ if(isset($_SESSION['userID'])){
           <li <?php if(isset($_GET['pg'])){ if($_GET['pg'] == 'inicio'){ echo 'class="active"';}}?>>
           <a href="index.php?pg=inicio"><span class="glyphicon glyphicon-home"></span> Inicio</a>
           </li>
+           <li <?php if(isset($_GET['pg'])){ if($_GET['pg'] == 'pedidos'){ echo 'class="active"';}}?>>
+          <a href="index.php?pg=pedidos"><span class="glyphicon glyphicon-list-alt"></span> Pedidos</a>
+          </li>
 
             
 
@@ -50,6 +52,7 @@ if(isset($_SESSION['userID'])){
           <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'ventas'){ echo 'class="active"';}}?>>
             <a href="index.php?pg=ventas"><span class="glyphicon glyphicon-usd"></span> Ventas</a>
           </li>
+         
           <?php endif;  ?>
 
 
@@ -68,7 +71,7 @@ if(isset($_SESSION['userID'])){
             <a href="#" style="color: red"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <span class="glyphicon glyphicon-user"></span> Usuario: <?php if(isset($_SESSION['usuario'])){ echo $_SESSION['usuario'];} ?>  <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li> <a style="color: red" href="index.php?onLogout=true"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
+              <li> <a style="color: red" href="procesos/salir.php"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
             </ul>
           </li>
         </ul>
@@ -95,3 +98,4 @@ if(isset($_SESSION['userID'])){
   }
   );
 </script>
+<?php } ?>

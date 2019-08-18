@@ -20,10 +20,11 @@
 	<script src="js/alertify.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="librerias/select2/css/select2.css">
 	<script src="librerias/select2/js/select2.js"></script>
+	<link rel="Shortcut Icon" type="image/x-icon" href="img/logo-libro.png" />
 </head>
 <body>
 
-	<?php if($navController->loadNavBar()){ include $navController->loadNavBar();} ?>
+	<?php if(isset($_SESSION['usuario'])){ include $navController->loadNavBar(); } ?>
 	<br><br><br>
 
 	<?php include $navController->loadView(); ?>

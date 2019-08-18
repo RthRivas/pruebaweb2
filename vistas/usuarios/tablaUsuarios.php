@@ -16,12 +16,20 @@
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Usuarios :)</label></caption>
 	<tr>
+<<<<<<< HEAD
 		<td>Nombre</td>
 		<td>Apellido</td>
 		<td>Usuario</td>
 		<td>Correo</td>
 		<td>Editar</td>
 		<td>Eliminar</td>
+=======
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Usuario</th>
+		<th>Editar</th>
+		<th>Eliminar</th>
+>>>>>>> 246cd295e5b86513f924ba7c094060b95f1a2198
 	</tr>
 
 	<?php while($ver=mysqli_fetch_row($result)): ?>

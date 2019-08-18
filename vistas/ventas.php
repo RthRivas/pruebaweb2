@@ -1,4 +1,3 @@
-
 <head>
 	<title>ventas</title>
 </head>

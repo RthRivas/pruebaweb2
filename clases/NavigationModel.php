@@ -14,6 +14,7 @@ class NavigationModel{
                 $page == 'clientes' ||
                 $page == 'ventas' ||
                 $page == 'login' ||
+                $page == 'pedidos' ||
                 $page == 'VerDetalle' 
                 ){ // (usuarios.php: pagina que contiene la tabla de administracion de usuarios)
                     $pageToView = $page . '.php';
@@ -26,6 +27,7 @@ class NavigationModel{
             if($page == 'inicio' ||
                 $page == 'ventas' ||
                 $page == 'VerDetalle' ||
+                $page == 'pedidos' ||
                 $page == 'clientes' 
                 ){ // (usuarios.php: pagina que contiene la tabla de administracion de usuarios)
                     $pageToView = $page . '.php';
@@ -41,6 +43,7 @@ class NavigationModel{
                 $page == 'micuenta' ||
                 $page == 'articulos' ||
                 $page == 'usuarios'||
+                $page == 'pedidos' ||
                 $page == 'VerDetalle' 
                 ){ // (usuarios.php: pagina que contiene la tabla de administracion de usuarios)
                     $pageToView = $page . '.php';
