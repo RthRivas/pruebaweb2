@@ -5,17 +5,17 @@
 <body>
 
 	<div class="container">
-		 <h1>Pedidos de productos</h1>
+		 <h1>Pedidos</h1>
 		 <div class="row">
 		 	<div class="col-sm-12">
-		 		<span class="btn btn-default" id="pedidoProductosBtn">Realizar pedido</span>
-		 		<span class="btn btn-default" id="pedidoHechoBtn">Pedidos Hechos</span>
+		 		<span class="btn btn-default" id="pedidosProductosBtn">Pedir productos</span>
+		 		<span class="btn btn-default" id="pedidosHechosBtn">Pedidos hechos</span>
 		 	</div>
 		 </div>
 		 <div class="row">
 		 	<div class="col-sm-12">
-		 		<div id="pedidoProductos"></div>
-		 		<div id="pedidoHecho"></div>
+		 		<div id="pedidosProductos"></div>
+		 		<div id="pedidosHechos"></div>
 		 	</div>
 		 </div>
 	</div>
@@ -24,21 +24,21 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#pedidoProductosBtn').click(function(){
-				esconderSeccionPedido();
-				$('#pedidoProductos').load('vistas/pedidos/pedidoDeProductos.php');
-				$('#pedidoProductos').show();
+			$('#pedidosProductosBtn').click(function(){
+				esconderSeccionPedidos();
+				$('#pedidosProductos').load('vistas/pedidos/pedidosDeProducto.php');
+				$('#pedidosProductos').show();
 			});
-			$('#pedidoHechoBtn').click(function(){
-				esconderSeccionPedido();
-				$('#pedidoHecho').load('vistas/pedidos/ReportePedido.php');
-				$('#pedidoHecho').show();
+			$('#pedidosHechosBtn').click(function(){
+				esconderSeccionPedidos();
+				$('#pedidosHechos').load('vistas/pedidos/pedidosyReportes.php');
+				$('#pedidosHechos').show();
 			});
 		});
 
-		function esconderSeccionPedido(){
-			$('#pedidoProductos').hide();
-			$('#pedidoHecho').hide();
+		function esconderSeccionPedidos(){
+			$('#pedidosProductos').hide();
+			$('#pedidosHechos').hide();
 		}
 
 	</script>
