@@ -15,6 +15,8 @@
 						<input type="text" class="form-control input-sm" name="usuario" id="usuario">
 						<label>Password</label>
 						<input type="text" class="form-control input-sm" name="password" id="password">
+						<label>Email</label>
+						<input type="email" class="form-control input-sm" name="email" id="email">
 						<p></p>
 						<span class="btn btn-primary" id="registro">Registrar</span>
 
@@ -43,6 +45,8 @@
 							<input type="text" class="form-control input-sm" name="apellidoU" id="apellidoU">
 							<label>Usuario</label>
 							<input type="text" class="form-control input-sm" name="usuarioU" id="usuarioU">
+							<label>Email</label>
+							<input type="text" class="form-control input-sm" name="emailU" id="emailU">
 
 						</form>
 					</div>
@@ -69,7 +73,8 @@
 					$('#idUsuario').val(dato['id_usuario']);
 					$('#nombreU').val(dato['nombre']);
 					$('#apellidoU').val(dato['apellido']);
-					$('#usuarioU').val(dato['email']);
+					$('#usuarioU').val(dato['usuario']);
+					$('#emailU').val(dato['email']);
 				}
 			});
 		}

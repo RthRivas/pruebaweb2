@@ -19,6 +19,7 @@ class NavigationController{
 
         }
         if(isset($_GET['onLogout'])){
+            
             if($USRController->logout()){
                 header('Location: index.php?pg=home');
             }
