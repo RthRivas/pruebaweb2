@@ -1,5 +1,5 @@
 <head>
-	<title>ventas</title>
+	<title>Ventas</title>
 </head>
 <body>
 

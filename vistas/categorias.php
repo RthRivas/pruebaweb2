@@ -73,7 +73,7 @@
 					$('#frmCategorias')[0].reset();
 
 					$('#tablaCategoriaLoad').load("vistas/categorias/tablaCategorias.php");
-					alertify.success("Categoria agregada con exito :D");
+					alertify.success("Categoria agregada con exito ");
 				}else{
 					alert("pero que a pasao?: " + r);
 					alertify.error("No se pudo agregar categoria");
@@ -96,9 +96,9 @@
 					success:function(r){
 						if(r==1){
 							$('#tablaCategoriaLoad').load("vistas/categorias/tablaCategorias.php");
-							alertify.success("Actualizado con exito :)");
+							alertify.success("Actualizado con exito ");
 						}else{
-							alertify.error("no se pudo actaulizar :(");
+							alertify.error("no se pudo actaulizar ");
 						}
 					}
 				});
@@ -123,7 +123,7 @@
 							$('#tablaCategoriaLoad').load("vistas/categorias/tablaCategorias.php");
 							alertify.success("Eliminado con exito!!");
 						}else{
-							alertify.error("No se pudo eliminar :(");
+							alertify.error("No se pudo eliminar ");
 						}
 					}
 				});

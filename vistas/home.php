@@ -1,3 +1,6 @@
+<head>
+  <title>Sistema de Ventas</title>
+</head>
 <style>
   #frmLogin p {
    text-align:center;

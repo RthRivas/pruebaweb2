@@ -1,6 +1,6 @@
 
 	<head>
-		<title>articulos</title>
+		<title>Articulos</title>
 		<?php require_once "clases/Conexion.php"; 
 		$c= new conectar();
 		$conexion=$c->conexion();
@@ -120,7 +120,7 @@
 							$('#tablaArticulosLoad').load("vistas/articulos/tablaArticulos.php");
 							alertify.success("Eliminado con exito!!");
 						}else{
-							alertify.error("No se pudo eliminar :(");
+							alertify.error("No se pudo eliminar ");
 						}
 					}
 				});
@@ -142,10 +142,10 @@
 					success:function(r){
 						if(r==1){
 							$('#tablaArticulosLoad').load("vistas/articulos/tablaArticulos.php");
-							alertify.success("Actualizado con exito :D");
+							alertify.success("Actualizado con exito ");
 						}else{
 							alert("Erroorazo: "+ r);
-							alertify.error("Error al actualizar :( ");
+							alertify.error("Error al actualizar ");
 						}
 					}
 				});
@@ -182,9 +182,9 @@
 						if(r == 1){
 							$('#frmArticulos')[0].reset();
 							$('#tablaArticulosLoad').load("vistas/articulos/tablaArticulos.php");
-							alertify.success("Agregado con exito :D");
+							alertify.success("Agregado con exito ");
 						}else{
-							alertify.error("Fallo al subir el archivo :(" + r);
+							alertify.error("Fallo al subir el archivo " + r);
 						}
 					}
 				});

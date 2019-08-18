@@ -13,7 +13,7 @@
 						<input type="text" class="form-control input-sm" name="apellido" id="apellido">
 						<label>Email</label>
 						<input type="text" class="form-control input-sm" name="usuario" id="usuario">
-						<label>Pass</label>
+						<label>Password</label>
 						<input type="password" class="form-control input-sm" name="password" id="password">
 						<label>Tipo</label>
 						<input type="number" class="form-control input-sm" name="tipo" id="tipo">
@@ -150,7 +150,7 @@
 							$('#tablaUsuariosLoad').load('vistas/usuarios/tablaUsuarios.php');
 							alertify.success("Agregado con exito");
 						}else{
-							alertify.error("Fallo al agregar :(");
+							alertify.error("Fallo al agregar ");
 						}
 					}
 				});

@@ -1,6 +1,6 @@
 
 <head>
-	<title>inicio</title>
+	<title>Inicio</title>
 </head>
 <br>
 <?php require_once "clases/Conexion.php"; 

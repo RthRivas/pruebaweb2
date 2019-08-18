@@ -1,5 +1,5 @@
 <head>
-		<title>clientes</title>
+		<title>Clientes</title>
 	</head>
 	
 		<div class="container">
@@ -102,7 +102,7 @@
 							$('#tablaClientesLoad').load("vistas/clientes/tablaClientes.php");
 							alertify.success("Eliminado con exito!!");
 						}else{
-							alertify.error("No se pudo eliminar :(");
+							alertify.error("No se pudo eliminar ");
 						}
 					}
 				});
@@ -139,7 +139,7 @@
 						if(r==1){
 							$('#frmClientes')[0].reset();
 							$('#tablaClientesLoad').load("vistas/clientes/tablaClientes.php");
-							alertify.success("Cliente agregado con exito :D");
+							alertify.success("Cliente agregado con exito ");
 						}else{
 							alertify.error("No se pudo agregar cliente");
 						}
@@ -162,7 +162,7 @@
 					success:function(r){
 						if(r==1){
 							$('#tablaClientesLoad').load("vistas/clientes/tablaClientes.php");
-							alertify.success("Cliente actualizado con exito :D");
+							alertify.success("Cliente actualizado con exito ");
 						}else{
 							alert("Errorazo: " +r);
 							alertify.error("No se pudo actualizar cliente");

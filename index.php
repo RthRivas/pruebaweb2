@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<!--el <title>Titulo en la pestaña</title> incluirlo en cada archivo a incluir (donde es necesario)-->
 	<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/alertify.min.css">
