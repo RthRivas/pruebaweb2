@@ -28,7 +28,7 @@
 					<th>Cliente</th>
 					<th>Total de compra</th>
 					<th>Ticket</th>
-					<th>Reporte</th>
+					<th>Factura</th>
 				</tr>
 		<?php while($ver=mysqli_fetch_row($result)): ?>
 				<tr>
@@ -55,13 +55,43 @@
 					</td>
 					<td>
 						<a href="procesos/ventas/crearReportePdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
-							Reporte <span class="glyphicon glyphicon-file"></span>
+							Factura <span class="glyphicon glyphicon-file"></span>
 						</a>	
 					</td>
 				</tr>
 		<?php endwhile; ?>
 			</table>
+			<input type="date" id="fechaI" name="fechaI" onChange="asignar();">
+			<input type="date" id="fechaF" name="fechaF" onChange="asignar();"> 
+			
+			<input type="text" id="Res" name="Res" >
+			<a href="procesos/ventas/crearReporteVentasPdf.php?fecha=Res" class="btn btn-danger btn-sm">
+							Reporte de ventas <span class="glyphicon glyphicon-file"></span>
+						</a>
 		</div>
 	</div>
 	<div class="col-sm-1"></div>
 </div>
+<script>
+			
+			function agregaDatosCliente(idcliente){
+
+					$.ajax({
+						type:"POST",
+						data:"idcliente=" + idcliente,
+						url:"procesos/clientes/obtenDatosCliente.php",
+						success:function(r){
+							dato=jQuery.parseJSON(r);
+							$('#idclienteU').val(dato['id_cliente']);
+							$('#nombreU').val(dato['nombre']);
+							$('#apellidosU').val(dato['apellido']);
+							$('#direccionU').val(dato['direccion']);
+							$('#emailU').val(dato['email']);
+							$('#telefonoU').val(dato['telefono']);
+							$('#duiU').val(dato['dui']);
+
+						}
+					}
+			}
+
+</script>
