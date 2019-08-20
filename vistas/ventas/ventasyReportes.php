@@ -65,9 +65,7 @@
 			<input type="date" id="fechaF" name="fechaF" onChange="asignar();"> 
 			
 			<input type="text" id="Res" name="Res" >
-			<a href="procesos/ventas/crearReporteVentasPdf.php?fecha=Res" class="btn btn-danger btn-sm">
-							Reporte de ventas <span class="glyphicon glyphicon-file"></span>
-						</a>
+			<button type="button" id="Reporte" class="btn btn-warning" data-dismiss="modal">Guardar</button>
 		</div>
 	</div>
 	<div class="col-sm-1"></div>
