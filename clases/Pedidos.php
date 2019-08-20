@@ -105,7 +105,6 @@ class pedidos{
 		while($ver=mysqli_fetch_row($result)){
 			$total=$total + $ver[0];
 		}
-		
 
 		return $total;
 	}
