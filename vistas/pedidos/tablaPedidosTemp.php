@@ -8,7 +8,7 @@
  <h4><strong><div id="nombreclienteVenta"></div></strong></h4>
  <table class="table table-bordered table-hover table-condensed" style="text-align: center;">
  	<caption>
- 		<span class="btn btn-success" onclick="crearPedidos()"> Registrar Pedido
+ 		<span class="btn btn-success" onclick="crearPedido()"> Generar pedido
  			<span class="glyphicon glyphicon-usd"></span>
  		</span>
  	</caption>
@@ -22,9 +22,9 @@
  	<?php 
  	$total=0;//esta variable tendra el total de la compra en dinero
  	$cliente=""; //en esta se guarda el nombre del cliente
- 		if(isset($_SESSION['tablaComprasTemp'])):
+ 		if(isset($_SESSION['tablaCompras2Temp'])):
  			$i=0;
- 			foreach (@$_SESSION['tablaComprasTemp'] as $key) {
+ 			foreach (@$_SESSION['tablaCompras2Temp'] as $key) {
 
  				$d=explode("||", @$key);
  	 ?>
@@ -50,7 +50,7 @@
  ?>
 
  	<tr>
- 		<td>Total de monetario del pedido: <?php echo "$".$total; ?></td>
+ 		<td>Total de venta: <?php echo "$".$total; ?></td>
  	</tr>
 
  </table>

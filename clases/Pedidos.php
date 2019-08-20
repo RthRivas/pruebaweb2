@@ -32,13 +32,13 @@ class pedidos{
 		return $data;
 	}
 
-	public function crearPedidos(){
+	public function crearPedido(){
 		$c= new conectar();
 		$conexion=$c->conexion();
 
 		$fecha=date('Y-m-d');
-		$idpedido=self::creaFolio();
-		$datos=$_SESSION['tablaComprasTemp'];
+		$idventa=self::creaFolio();
+		$datos=$_SESSION['tablaCompras2Temp'];
 		$idusuario=$_SESSION['userID'];
 		$r=0;
 
@@ -62,7 +62,6 @@ class pedidos{
 
 		return $r;
 	}
-
 	public function creaFolio(){
 		$c= new conectar();
 		$conexion=$c->conexion();
@@ -92,7 +91,7 @@ class pedidos{
 		return $ver[0]." ".$ver[1];
 	}
 
-	public function obtenerTotal($idventa){
+	public function obtenerTotal($idpedido){
 		$c= new conectar();
 		$conexion=$c->conexion();
 
