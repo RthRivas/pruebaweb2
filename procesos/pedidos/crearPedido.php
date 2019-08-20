@@ -8,11 +8,11 @@ $conexion=$c->conexion();
 
 	
 
-	if(count($_SESSION['tablaComprasTemp'])==0){
+	if(count($_SESSION['tablaCompras2Temp'])==0){
 		echo 0;
 	}else{
-		$result=$obj->crearPedidos();
-		unset($_SESSION['tablaComprasTemp']);
+		$result=$obj->crearPedido();
+		unset($_SESSION['tablaCompras2Temp']);
 		echo $result;
 	}
  ?>

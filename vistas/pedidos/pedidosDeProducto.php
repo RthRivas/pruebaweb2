@@ -12,19 +12,9 @@ $conexion=$c->conexion();
 <div class="row">
 	<div class="col-sm-4">
 		<form id="frmPedidosProductos">
-			<label>Selecciona Cliente</label>
-			<select class="form-control input-sm" id="clientePedidos" name="clientePedidos">
-				<option value="A">Selecciona</option>
-				<option value="0">Sin cliente</option>
-				<?php
-				$sql="SELECT id_cliente,nombre,apellido 
-				from clientes";
-				$result=mysqli_query($conexion,$sql);
-				while ($cliente=mysqli_fetch_row($result)):
-					?>
-					<option value="<?php echo $cliente[0] ?>"><?php echo $cliente[2]." ".$cliente[1] ?></option>
-				<?php endwhile; ?>
-			</select>
+			<!------ Pedido para cliente logueado----->
+			<input type="hidden" class="form-control input-sm" name="tipo" id="tipo" value=" <?php if(isset($_SESSION['usuario'])){ echo $_SESSION['userID'];} ?>">
+		
 			<label>Producto</label>
 			<select class="form-control input-sm" id="productoPedidos" name="productoPedidos">
 				<option value="A">Selecciona</option>
@@ -88,7 +78,7 @@ $conexion=$c->conexion();
 			$.ajax({
 				type:"POST",
 				data:datos,
-				url:"procesos/pedidos/agregarProductoTemp.php",
+				url:"procesos/pedidos/agregaProductoTemp.php",
 				success:function(r){
 					$('#tablaPedidosTempLoad').load("vistas/pedidos/tablaPedidosTemp.php");
 				}
@@ -121,9 +111,9 @@ $conexion=$c->conexion();
 		});
 	}
 
-	function crearPedidos(){
+	function crearPedido(){
 		$.ajax({
-			url:"procesos/pedidos/crearPedidos.php",
+			url:"procesos/pedidos/crearPedido.php",
 			success:function(r){
 				if(r > 0){
 					$('#tablaPedidosTempLoad').load("vistas/pedidos/tablaPedidosTemp.php");
@@ -132,6 +122,7 @@ $conexion=$c->conexion();
 				}else if(r==0){
 					alertify.alert("No hay lista de pedido!!");
 				}else{
+					alert("Errorazo: " +r);
 					alertify.error("No se pudo crear el pedido");
 
 				}
