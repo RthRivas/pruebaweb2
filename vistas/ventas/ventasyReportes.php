@@ -10,7 +10,7 @@
 	$obj= new ventas();
 	$sql="SELECT id_venta,
 				fechaCompra,
-				id_cliente 
+				id_usuario
 			from ventas group by id_venta";
 	$result=mysqli_query($conexion,$sql); 
 	?>

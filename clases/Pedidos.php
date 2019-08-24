@@ -1,6 +1,6 @@
 <?php 
 
-class pedidos{
+class Pedidos{
 	public function obtenDatosProducto($idproducto){
 		$c=new conectar();
 		$conexion=$c->conexion();
@@ -38,10 +38,10 @@ class pedidos{
 
 		$fecha=date('Y-m-d');
 		$idventa=self::creaFolio();
-		$datos=$_SESSION['tablaCompras2Temp'];
-		$idusuario=$_SESSION['userID'];
+		$datos=$_SESSION['tablaPedidoTemp'];
+		if(isset($_SESSION['usuario'])){ $idusuario= $_SESSION['usuario'];}
+		
 		$r=0;
-
 		for ($i=0; $i < count($datos) ; $i++) { 
 			$d=explode("||", $datos[$i]);
 
@@ -107,6 +107,14 @@ class pedidos{
 		}
 
 		return $total;
+	}
+	public function eliminarPedido($id_pedido){
+		$c= new conectar();
+		$conexion=$c->conexion();
+
+		$sql="DELETE from pedidos where id_pedido='$id_pedido'";
+
+		return mysqli_query($conexion,$sql);
 	}
 }
 
