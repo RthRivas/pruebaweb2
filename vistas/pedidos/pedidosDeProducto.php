@@ -20,7 +20,7 @@ $conexion=$c->conexion();
 				<option value="A">Selecciona</option>
 				<?php
 				$sql="SELECT id_producto,
-				nombre
+				nombre,precio
 				from articulos";
 				$result=mysqli_query($conexion,$sql);
 
@@ -129,6 +129,7 @@ $conexion=$c->conexion();
 			}
 		});
 	}
+
 </script>
 
 <script type="text/javascript">
@@ -138,3 +139,24 @@ $conexion=$c->conexion();
 
 	});
 </script>
+<script>
+	function eliminarPedido(idPedido){
+			alertify.confirm('¿Desea eliminar este cliente?', function(){ 
+				$.ajax({
+					type:"POST",
+					data:"id_pedido=" + idPedido,
+					url:"procesos/pedidos/eliminarPedido.php",
+					success:function(r){
+						if(r==1){
+							$('#tablaPedidosLoad').load("vistas/pedidos/tablaPedidosTemp.php");
+							alertify.success("Eliminado con exito!!");
+						}else{
+							alertify.error("No se pudo eliminar ");
+						}
+					}
+				});
+			}, function(){ 
+				alertify.error('Cancelo !')
+			});
+		}
+</script>	

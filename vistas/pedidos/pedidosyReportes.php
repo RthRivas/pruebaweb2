@@ -1,18 +1,50 @@
-<?php 
+	<?php 
 
 	require_once "../../clases/Conexion.php";
 	require_once "../../clases/Pedidos.php";
-
+	session_start();
 
 	$c= new conectar();
 	$conexion=$c->conexion();
 
 	$obj= new pedidos();
-	$sql="SELECT id_pedido,
-				fechaPedido,
-				id_cliente 
-			from pedidos group by id_pedido";
+
+		$idusuario= $_SESSION['usuario'];
+   //echo $idusuario;
+   $sql2 ="SELECT tipo, email from usuarios where email = '$idusuario'";
+   $result2 = mysqli_query($conexion,$sql2);
+   $ver2=mysqli_fetch_row($result2);
+	$tipo=$ver2[0];
+	$email=$ver2[1];
+	echo $ver2[0];
+
+	if($ver2[0]==1){
+		$sql="SELECT id_pedido,
+		fechaPedido,
+		id_usuario,
+		precio
+	from pedidos ";
 	$result=mysqli_query($conexion,$sql); 
+	}else if($ver2[0] == 2)
+	{
+		//empleado
+		$sql="SELECT id_pedido,
+		fechaPedido,
+		id_usuario,
+		precio
+	from pedidos ";
+	$result=mysqli_query($conexion,$sql); 
+
+	}else if ($ver2[0]==3){
+		$sql="SELECT id_pedido,
+		fechaPedido,
+		id_usuario,
+		precio
+	from pedidos where id_usuario='$idusuario'";
+	$result=mysqli_query($conexion,$sql); 
+	}
+
+	
 	?>
 
 <h4>Reportes de pedidos</h4>
@@ -27,8 +59,8 @@
 					<th>Fecha</th>
 					<th>Cliente</th>
 					<th>Total del Pedido</th>
-					<th>Ticket</th>
-					<th>Pedido</th>
+					<th>accion</th>
+					<th>accion</th>
 				</tr>
 		<?php while($ver=mysqli_fetch_row($result)): ?>
 				<tr>
@@ -37,26 +69,33 @@
 					<td>
 						<?php
 							if($obj->nombreCliente($ver[2])==" "){
-								echo "S/C";
+								echo $ver[2];
 							}else{
-								echo $obj->nombreCliente($ver[2]);
+								echo $ver[2];
 							}
 						 ?>
 					</td>
 					<td>
 						<?php 
-							echo "$".$obj->obtenerTotal($ver[0]);
+							echo "$".$ver[3];
 						 ?>
 					</td>
 					<td>
-						<a href="procesos/ventas/crearTicketPdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
-							Ticket <span class="glyphicon glyphicon-list-alt"></span>
-						</a>
+						<?php if($ver2[0]==3){?>
+							<a hidden class="btn btn-danger btn-sm">
+							Comprar <span class="glyphicon glyphicon-list-alt"></span>
+							</a><?php
+						}else{ ?>
+							<a href="procesos/ventas/crearTicketPdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
+							Comprar <span class="glyphicon glyphicon-list-alt"></span>
+							</a>
+							<?php } ?>
+						
 					</td>
 					<td>
-						<a href="procesos/ventas/crearReportePdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
-							Reporte <span class="glyphicon glyphicon-file"></span>
-						</a>	
+					<span class="btn btn-danger btn-xs" onclick="EliminarPedido('<?php echo $ver[0]; ?>')">
+				<span class="glyphicon glyphicon-remove"></span>
+			</span>
 					</td>
 				</tr>
 		<?php endwhile; ?>
@@ -64,4 +103,5 @@
 		</div>
 	</div>
 	<div class="col-sm-1"></div>
+
 </div>

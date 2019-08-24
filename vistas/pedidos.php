@@ -40,5 +40,23 @@
 			$('#pedidosProductos').hide();
 			$('#pedidosHechos').hide();
 		}
-
+	function eliminarPedido(id_pedido){
+			alertify.confirm('¿Desea eliminar este pedido?', function(){ 
+				$.ajax({
+					type:"POST",
+					data:"id_pedido=" + id_pedido,
+					url:"procesos/pedidos/EliminarPedido.php",
+					success:function(r){
+						if(r==1){
+							$('#tablaPedidosLoad').load("vistas/pedidos/tablaPedidosTemp.php");
+							alertify.success("Eliminado con exito!!");
+						}else{
+							alertify.error("No se pudo eliminar ");
+						}
+					}
+				});
+			}, function(){ 
+				alertify.error('Cancelo !')
+			});
+		}
 	</script>

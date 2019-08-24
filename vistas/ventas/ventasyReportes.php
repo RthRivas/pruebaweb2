@@ -10,7 +10,7 @@
 	$obj= new ventas();
 	$sql="SELECT id_venta,
 				fechaCompra,
-				id_cliente 
+				id_usuario
 			from ventas group by id_venta";
 	$result=mysqli_query($conexion,$sql); 
 	?>
@@ -65,6 +65,7 @@
 			<input type="date" id="fechafinal" name="fechafinal"> 
 			
 			<input type="text" id="Res" name="Res" >
+<<<<<<< HEAD
 			<a href="procesos/ventas/crearReporteVentasPdf.php?fecha=Res" class="btn btn-danger btn-sm">
 							Reporte de ventas <span class="glyphicon glyphicon-file"></span>
 						</a>
@@ -74,6 +75,9 @@
 							Grafica<span class="glyphicon glyphicon-file"></span>
 						</a>
 
+=======
+			<button type="button" id="Reporte" class="btn btn-warning" data-dismiss="modal">Guardar</button>
+>>>>>>> 40dc0e787008aaeb0d3372f2cce7e70920cf598d
 		</div>
 	</div>
 	<div class="col-sm-1"></div>

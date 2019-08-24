@@ -2,19 +2,24 @@
 
 	session_start();
 	//print_r($_SESSION['tablaComprasTemp']);
- ?>
+	require_once "../../clases/Conexion.php";
+	?>
 
  <h4>Hacer venta</h4>
- <h4><strong><div id="nombreclienteVenta"></div></strong></h4>
+ <h4><strong><div id="tablaPedidoTemp"></div></strong></h4>
  <table class="table table-bordered table-hover table-condensed" style="text-align: center;">
  	<caption>
  		<span class="btn btn-success" onclick="crearPedido()"> Generar pedido
  			<span class="glyphicon glyphicon-usd"></span>
  		</span>
  	</caption>
+ <?php
+ 		//	$idusuario= $_SESSION['usuario'];
+		//	echo $idusuario;
+		?>
  	<tr>
  		<th>Nombre</th>
- 		<th>Descripcion</th>
+ 		
  		<th>Precio</th>
  		<th>Cantidad</th>
  		<th>Quitar</th>
@@ -22,16 +27,16 @@
  	<?php 
  	$total=0;//esta variable tendra el total de la compra en dinero
  	$cliente=""; //en esta se guarda el nombre del cliente
- 		if(isset($_SESSION['tablaCompras2Temp'])):
+ 		if(isset($_SESSION['tablaPedidoTemp'])):
  			$i=0;
- 			foreach (@$_SESSION['tablaCompras2Temp'] as $key) {
+ 			foreach (@$_SESSION['tablaPedidoTemp'] as $key) {
 
  				$d=explode("||", @$key);
  	 ?>
 
  	<tr>
  		<td><?php echo $d[1] ?></td>
- 		<td><?php echo $d[2] ?></td>
+ 		
  		<td><?php echo $d[3] ?></td>
  		<td><?php echo 1; ?></td>
  		<td>

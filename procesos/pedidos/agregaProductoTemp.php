@@ -34,6 +34,6 @@
 				$ncliente."||".
 				$idcliente;
 
-	$_SESSION['tablaCompras2Temp'][]=$articulo;
+	$_SESSION['tablaPedidoTemp'][]=$articulo;
 
  ?>
