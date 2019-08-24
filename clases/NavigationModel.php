@@ -15,7 +15,8 @@ class NavigationModel{
                 $page == 'ventas' ||
                 $page == 'login' ||
                 $page == 'pedidos' ||
-                $page == 'VerDetalle' 
+                $page == 'VerDetalle'||
+                $page == 'grafica'  
                 ){ // (usuarios.php: pagina que contiene la tabla de administracion de usuarios)
                     $pageToView = $page . '.php';
             }else{

@@ -1,6 +1,6 @@
 
 <head>
-	<title>Pedidos .</title>
+	<title>Pedidos</title>
 </head>
 <body>
 

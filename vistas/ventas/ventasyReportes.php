@@ -61,13 +61,19 @@
 				</tr>
 		<?php endwhile; ?>
 			</table>
-			<input type="date" id="fechaI" name="fechaI" onChange="asignar();">
-			<input type="date" id="fechaF" name="fechaF" onChange="asignar();"> 
+			<input type="date" id="fechainicio" name="fechainicio">
+			<input type="date" id="fechafinal" name="fechafinal"> 
 			
 			<input type="text" id="Res" name="Res" >
 			<a href="procesos/ventas/crearReporteVentasPdf.php?fecha=Res" class="btn btn-danger btn-sm">
 							Reporte de ventas <span class="glyphicon glyphicon-file"></span>
 						</a>
+
+			
+			<a href="index.php?pg=grafica" class="btn btn-danger btn-sm">
+							Grafica<span class="glyphicon glyphicon-file"></span>
+						</a>
+
 		</div>
 	</div>
 	<div class="col-sm-1"></div>

@@ -14,6 +14,7 @@
 <head>
 	
 	<!--el <title>Titulo en la pestaña</title> incluirlo en cada archivo a incluir (donde es necesario)-->
+	
 	<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/alertify.min.css">
 	<script src="librerias/jquery-3.2.1.min.js"></script>
@@ -22,6 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="librerias/select2/css/select2.css">
 	<script src="librerias/select2/js/select2.js"></script>
 	<link rel="Shortcut Icon" type="image/x-icon" href="img/logo-libro.png" />
+
 </head>
 <body>
 

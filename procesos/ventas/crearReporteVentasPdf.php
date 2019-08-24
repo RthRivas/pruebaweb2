@@ -8,6 +8,8 @@
 	$c=new conectar();
 	$conexion= $c->conexion();	
 	//$idventa=$_GET['idventa'];
+    $fechainicio = $_GET['fechainicio'];
+    $fechafinal = $_GET['fechafinal'];
 
  $sql="SELECT ve.id_venta,
 		ve.fechaCompra,
@@ -19,7 +21,9 @@
 
 	from ventas  as ve 
 	inner join articulos as art
-	on ve.id_producto=art.id_producto";
+	on ve.id_producto=art.id_producto where fechaCompra between '$fechainicio' and '$fechafinal' ";
+
+
 
 $result=mysqli_query($conexion,$sql);
 

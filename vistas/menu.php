@@ -52,6 +52,9 @@ if(isset($_SESSION['userID'])){
           <li <?php if(isset($_GET['pg'])){if($_GET['pg'] == 'ventas'){ echo 'class="active"';}}?>>
             <a href="index.php?pg=ventas"><span class="glyphicon glyphicon-usd"></span> Ventas</a>
           </li>
+          <li <?php if(isset($_GET['pg'])){ if($_GET['pg'] == 'grafica'){ echo 'class="active"';}}?>>
+          <a href="index.php?pg=grafica"><span class="glyphicon glyphicon-list-alt"></span> Pedidos</a>
+          </li>
          
           <?php endif;  ?>
 
